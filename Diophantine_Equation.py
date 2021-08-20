@@ -1,22 +1,21 @@
+import time
+
+
 def sol_equa(n):
     '''Diophantine Equation'''
     out = []
-    x = n
-    y = x - 1
-    while x > 0:
-
+    for y in range(n):
+        x = (n + 4 * y ** 2)**0.5
+        x = int(x)
         res = x ** 2 - 4 * y ** 2
-        if res < 0:
-            x -= 1
-            y = x - 1
-
-        elif res == n:
+        if res == n:
             out.append([x, y])
-
-        y -= 1
-        if y < 0:
-            x -= 1
-            y = x - 1
+        # if res > n:
+        #     break
     return out
 
-print(sol_equa(12))
+
+start = time.time()
+print(sol_equa(90005))
+finish = time.time()
+print(finish - start)
