@@ -2,17 +2,17 @@ def Irreducible_Sum_of_Rationals(lst):
     '''
     Irreducible Sum of Rationals
     '''
-
+    if not lst:
+        return None
     up = []
     down = []
     for i in lst:
         up.append(i[0])
         down.append(i[-1])
 
-    if lst:
-        dev = max(down)
-    else:
-        return None
+
+    dev = max(down)
+
     counter = 0
 
     while True:
