@@ -1,36 +1,49 @@
+
 # import itertools
 # def sum_arrangements(num):
-#     tpl = list(itertools.permutations(str(num), len(str(num))))
-#     summory = []
-#     summ = ''
+#     '''
+#     Sum of all numbers with the same digits
+#
+#     '''
+#     tpl = itertools.permutations(str(num), len(str(num)))
+#     s = 0
 #     for i in tpl:
-#         for j in i:
-#             summ += j
-#     while summ:
-#         summory.append(summ[:len(str(num))])
-#         summ = summ[len(str(num)):]
+#         s += int(''.join(i))
 #
-#     res = sum([int(i) for i in summory])
+#     return s
 #
-#     return res
+#
 #
 #
 # print(sum_arrangements(1185))
 
-import itertools
 def sum_arrangements(num):
     '''
     Sum of all numbers with the same digits
 
     '''
-    tpl = itertools.permutations(str(num), len(str(num)))
-    s = 0
-    for i in tpl:
-        s += int(''.join(i))
-
-    return s
+    k = 0
+    for i in str(num):
+        k += int(i)
 
 
+    res = ''
+    size = len(str(num))
+
+    k = k * (size - 1)
+    ost = k
+
+    while size:
+        num = k + ost
+        num = str(num)
+        res += num[-1]
+        ost = int(num[0])
+        size -= 1
+
+    return int(res) - k
 
 
-print(sum_arrangements(1185))
+
+
+
+print(sum_arrangements(123))
