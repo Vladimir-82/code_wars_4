@@ -36,7 +36,10 @@ def sum_arrangements(num):
     while size:
         num = k + ost
         num = str(num)
-        res += num[-1]
+        if size == 1:
+            res = num + res
+            break
+        res = num[-1] + res
         ost = int(num[0])
         size -= 1
 
@@ -46,4 +49,4 @@ def sum_arrangements(num):
 
 
 
-print(sum_arrangements(123))
+print(sum_arrangements(1185))
