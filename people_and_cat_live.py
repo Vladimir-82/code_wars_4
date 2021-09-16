@@ -28,6 +28,8 @@ class Man(Сreation):
 
 
 
+
+
 class Cat(Сreation):
 
     def pear_wallpaper(self):
@@ -49,4 +51,28 @@ class House:
     def __str__(self):
         return 'В доме осталось еды - {}, кошачей еды - {}, денег - {}, мусора - {}'.format(
             self.food, self.cats_food, self.money, self.rubbish)
+
+
+cityzens = [
+    Man(name='Ахмед'),
+    Man(name='Ибрагим'),
+    Man(name='Мустафа')
+]
+
+cats = [
+    Cat(name="Барсик"),
+    Cat(name="Котяра"),
+    Cat(name="Помойный кот")
+]
+
+sweet_home = House()
+
+for cityzen in cityzens:
+    cityzen.go_into_house(house=sweet_home)
+
+for cat in cats:
+    cat.go_into_house(house=sweet_home)
+
+
+
 
