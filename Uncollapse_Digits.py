@@ -6,8 +6,8 @@ def Uncollapse_Digits(digits):
     numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     for i in numbers:
         if i in digits:
-            res.append(i)
-    print(res)
+            print(digits.find(i))
 
 
-print(Uncollapse_Digits("ninethreesixthree"))
+
+print(Uncollapse_Digits("ninethreesixthreenine"))
